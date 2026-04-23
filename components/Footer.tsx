@@ -1,38 +1,58 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white/80 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-          <div>
-            <Link href="/" className="flex items-center gap-2 text-white font-bold text-lg mb-2">
-              <span>🦆</span>
-              <span>Waterfowl Journal</span>
-            </Link>
-            <p className="text-sm max-w-xs text-white/60">
-              Your field guide to duck hunting, goose hunting, gear, conservation, and the waterfowl lifestyle.
-            </p>
-          </div>
-          <div className="flex gap-12 text-sm">
-            <div className="flex flex-col gap-2">
-              <span className="text-white font-semibold mb-1">Topics</span>
-              <Link href="/topics/duck-hunting" className="hover:text-white transition-colors">Duck Hunting</Link>
-              <Link href="/topics/goose-hunting" className="hover:text-white transition-colors">Goose Hunting</Link>
-              <Link href="/topics/gear" className="hover:text-white transition-colors">Gear & Equipment</Link>
-              <Link href="/topics/conservation" className="hover:text-white transition-colors">Conservation</Link>
+    <footer className="pt-16 mt-auto">
+      <div className="bg-mist-950/5 py-16 text-mist-950">
+        <div className="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-16">
+          <div className="flex flex-col sm:flex-row justify-between gap-10">
+            <div className="flex flex-col gap-3 max-w-xs">
+              <Link href="/" className="font-display text-xl text-mist-950 inline-flex items-center gap-2">
+                <span>🦆</span>
+                Waterfowl Journal
+              </Link>
+              <p className="text-sm/7 text-mist-600">
+                Your field guide to duck hunting, goose hunting, gear, conservation, and the waterfowl lifestyle.
+              </p>
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-white font-semibold mb-1">More</span>
-              <Link href="/blog" className="hover:text-white transition-colors">All Articles</Link>
-              <Link href="/studio" className="hover:text-white transition-colors">CMS Studio</Link>
-            </div>
+
+            <nav className="grid grid-cols-2 gap-x-12 gap-y-8 text-sm/7 sm:grid-cols-2">
+              <div>
+                <h3 className="font-semibold text-mist-950">Topics</h3>
+                <ul role="list" className="mt-2 flex flex-col gap-2">
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/topics/duck-hunting">Duck Hunting</Link>
+                  </li>
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/topics/goose-hunting">Goose Hunting</Link>
+                  </li>
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/topics/gear">Gear & Equipment</Link>
+                  </li>
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/topics/conservation">Conservation</Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-mist-950">More</h3>
+                <ul role="list" className="mt-2 flex flex-col gap-2">
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/blog">All Articles</Link>
+                  </li>
+                  <li className="text-mist-700 hover:text-mist-950 transition-colors">
+                    <Link href="/studio">CMS Studio</Link>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
-        </div>
-        <div className="border-t border-white/10 mt-8 pt-6 text-xs text-white/40 text-center">
-          &copy; {new Date().getFullYear()} Waterfowl Journal. All rights reserved.
+
+          <div className="text-sm/7 text-mist-600">
+            &copy; {new Date().getFullYear()} Waterfowl Journal. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
